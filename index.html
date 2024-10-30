@@ -39,8 +39,71 @@
         </div>
     </div>
 
+    <style>
+        /* Full-screen center setup */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            
+        }
+    
+        /* Style for the play button */
+        .play-button {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2); /* transparent button */
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            padding: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 20px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .play-button:hover {
+            background: rgba(255, 255, 255, 0.4); /* slightly less transparent on hover */
+        }
+    
+        /* Hide the button when clicked */
+        .hide {
+            display: none;
+        }
+    </style>
+    </head>
+    <body>
+    
+    <!-- Play button and audio -->
+    <button class="play-button" id="playButton">▶️ Play BGM</button>
+    <audio id="bgm" loop>
+        <source src="bgm.mp3" type="audio/mpeg">
+       
+    </audio>
+    
+    <script>
+        // Select elements
+        const playButton = document.getElementById('playButton');
+        const bgm = document.getElementById('bgm');
+    
+        // Play audio and hide button on click
+        playButton.addEventListener('click', function() {
+            bgm.play().then(() => {
+                playButton.classList.add('hide'); // Hide button after play starts
+            }).catch(error => {
+                console.error("Playback failed:", error);
+            });
+        });
+    </script>
+    
+
     <script src="script.js"></script>
-    <!-- <script src="hide.js"></script> -->
+    <script src="hide.js"></script>
 
 </body>
 </html>
