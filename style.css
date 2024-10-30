@@ -1,15 +1,15 @@
-
-
+/* Background with gradient */
 body {
     margin: 0;
     padding: 0;
-    background-color: #0b0c2a;
+    background: linear-gradient(to top, #0b0c2a, #1a237e);
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
     color: white;
     box-sizing: border-box;
 }
 
+/* Landing animation fade-in */
 .landing-animation {
     animation: fadeIn 2s ease-in-out forwards, glowEffect 3s ease-in-out infinite;
     opacity: 0;
@@ -35,6 +35,7 @@ body {
     }
 }
 
+/* Header with glow animation */
 .header h1 {
     font-size: 3em;
     color: #ffeb3b;
@@ -57,13 +58,13 @@ body {
         text-shadow: 0 0 20px #fff700, 0 0 30px #ff4500, 0 0 40px #ff4500, 0 0 50px #ff4500;
     }
 }
+
+/* Centered container for diya */
 .container {
     display: flex;
     position: relative;
     margin: auto;
-    left: 0;
-    right: 0;
-    bottom: -300px;
+    bottom: -100px;
 }
 
 .diya {
@@ -73,12 +74,10 @@ body {
     border-radius: 0 0 150px 150px;
     position: relative;
     margin: auto;
-    left: 0;
-    right: 0;
-    bottom: 50px;
     overflow: hidden;
-  }
-  .inside {
+    bottom: -100px;
+}
+.inside {
     width: 300px;
     height: 60px;
     background-color: #fd500a;
@@ -87,12 +86,12 @@ body {
     margin: auto;
     left: 0;
     right: 0;
-    bottom: 170px;
+    bottom: 17px;
   }
   .shadow {
     height: 60px;
     width: 320px;
-    background-color: rgba(25, 5, 71, 0.5);
+    background-color: rgba(22, 13, 107, 0.534);
     position: absolute;
     bottom: 30px;
     border-radius: 50%;
@@ -186,8 +185,7 @@ body {
     top: 30px;
     left: -10px;
   }
-
-/* Fireworks */
+/* Firework styling */
 #firework-container {
     position: absolute;
     top: 0;
@@ -195,44 +193,24 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
 }
 
-@keyframes fireworkBurst {
-    0% {
-        transform: scale(0.5);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(3);
-        opacity: 0;
-    }
-}
-
-/* Fireworks */
-#firework-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
-
+/* Enhanced firework */
 .firework {
     position: absolute;
     border-radius: 50%;
-    animation: burst 2s ease-out forwards;
+    animation: burst 2.5s ease-out forwards;
 }
 
 .spark {
     position: absolute;
-    width: 3px;
-    height: 3px;
+    width: 5px; /* Increased size */
+    height: 5px;
     background: radial-gradient(circle, #ff5722, transparent);
     border-radius: 50%;
-    animation: spark-animation 1.5s ease-out forwards;
+    animation: spark-animation 2s ease-out forwards; /* Longer duration */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6); /* Added extra glow */
 }
 
 @keyframes burst {
@@ -241,7 +219,7 @@ body {
         opacity: 1;
     }
     100% {
-        transform: scale(3);
+        transform: scale(4); /* Larger scale for visibility */
         opacity: 0;
     }
 }
@@ -250,45 +228,47 @@ body {
     0% {
         transform: translate(0, 0);
         opacity: 1;
-        box-shadow: 0 0 5px #ff5722, 0 0 10px #ffeb3b, 0 0 15px rgba(255, 255, 0, 0.6);
+        box-shadow: 0 0 15px #ff5722, 0 0 20px #ffeb3b, 0 0 30px rgba(255, 255, 0, 0.8);
     }
     100% {
         transform: translate(var(--spark-x), var(--spark-y));
         opacity: 0;
-        box-shadow: none;
     }
 }
 
-/* Spark Colors */
+/* Enhanced spark colors */
 .spark.red {
     background: radial-gradient(circle, #ff0000, transparent);
+    box-shadow: 0 0 15px #ff0000, 0 0 25px #ff4500;
 }
 
 .spark.green {
     background: radial-gradient(circle, #00ff00, transparent);
+    box-shadow: 0 0 15px #00ff00, 0 0 25px #00ff7f;
 }
 
 .spark.blue {
     background: radial-gradient(circle, #0000ff, transparent);
+    box-shadow: 0 0 15px #0000ff, 0 0 25px #4169e1;
 }
 
 .spark.yellow {
     background: radial-gradient(circle, #ffff00, transparent);
+    box-shadow: 0 0 15px #ffff00, 0 0 25px #ffeb3b;
 }
 
-/* Firework explosion */
-@keyframes launch {
+@keyframes spark-animation {
     0% {
-        transform: scale(0);
+        transform: translate(0, 0);
+        opacity: 1;
     }
     100% {
-        transform: scale(2);
-        background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,69,0,1) 100%);
+        transform: translate(var(--spark-x), var(--spark-y));
         opacity: 0;
     }
 }
 
-
+/* Footer styling */
 .footer {
     margin-top: 200px;
     color: #ff4500;
@@ -296,3 +276,173 @@ body {
     text-shadow: 0px 0px 10px #ff4500;
 }
 
+.maker {
+    color: #fff;
+    text-shadow: 0px 0px 10px #ff4500;
+    text-align: center;
+    padding: 0 30px;
+    margin-bottom: 20px;
+    background-color: #ffeb3b;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px #ffeb3b;
+    animation: pulse 1s infinite;
+    transition: background-color 0.5s;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    &:hover {
+        background-color: #ffeb3b;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: #ffeb3b;
+        border-radius: 50%;
+        animation: shimmer 2s infinite;
+        z-index: -1;
+    
+        @keyframes shimmer {
+            0% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.5;
+            }
+        }
+    
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background-color: #ffeb3b;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+            z-index: -2;
+        }
+            @keyframes sparkle {
+}
+    }
+}
+
+/* Animation for the maker */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animation for the fireworks */
+
+@keyframes firework-animation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+/* Animation for the sparkles */
+
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation for the footer */
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for the shimmer effect */
+
+@keyframes shimmer {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Animation for the sparkle effect */
+
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation for the firework effect */
+
+@keyframes firework-animation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+/* Animation for the sparkles */
+
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation for the footer */
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
